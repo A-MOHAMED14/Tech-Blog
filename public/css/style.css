@@ -12,3 +12,40 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: aliceblue;
 }
+
+/* HEADER STYLING */
+header {
+  padding: 30px 0px 30px 0px;
+  background-color: beige;
+}
+
+#nav-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#nav-links {
+  margin: 0 20px 0 0;
+  /* background-color: lightcoral; */
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav-links a {
+  text-decoration: none;
+  background-color: aliceblue;
+  padding: 5px 7px;
+  border-radius: 7px;
+}
+
+#nav-links a:hover {
+  background-color: beige;
+}
+
+#blog-title {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 4rem;
+}

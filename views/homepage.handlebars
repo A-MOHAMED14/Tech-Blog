@@ -1,0 +1,19 @@
+{{#each blogs as |blog|}}
+
+  <div id="blog-container">
+    <div id="blog-content-container">
+      <div id="blog-title">
+        <p>{{blog.blog_title}}</p>
+        <div id="user">
+          <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+        </div>
+      </div>
+      <div id="blog-content">
+        <p>
+          {{blog.content}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+{{/each}}

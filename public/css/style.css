@@ -23,7 +23,7 @@ body {
 /* HEADER STYLING */
 header {
   padding: 30px 0px 30px 0px;
-  background-color: #4682b4;
+  /* background-color: #4682b4; */
   background-color: var(--colour4);
 }
 
@@ -72,7 +72,7 @@ header {
   justify-content: center;
 }
 
-#blog-title {
+#blog-header {
   margin-top: 50px;
   margin-bottom: 20px;
   font-size: 4rem;
@@ -81,4 +81,42 @@ header {
   color: var(--colour4);
   background-color: var(--colour1);
   box-shadow: 7px 7px 1px var(--colour2);
+}
+
+/* -------- MAIN SECTION  -------- */
+
+/* BLOG STYLING */
+#blog-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+#blog-content-container {
+  width: 80%;
+  border: 3px solid var(--colour3);
+  border-radius: 5px;
+}
+
+#blog-title {
+  background-color: var(--colour4);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#blog-title p {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--colour1);
+}
+
+#user p {
+  font-size: 1.3rem;
+  color: var(--colour2);
+}
+
+#blog-content {
+  background-color: var(--colour1);
+  padding: 15px 20px;
 }

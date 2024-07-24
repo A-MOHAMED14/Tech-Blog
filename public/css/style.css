@@ -16,7 +16,7 @@ body {
 /* HEADER STYLING */
 header {
   padding: 30px 0px 30px 0px;
-  background-color: beige;
+  background-color: #4682b4;
 }
 
 #nav-container {
@@ -34,13 +34,25 @@ header {
 
 #nav-links a {
   text-decoration: none;
-  background-color: aliceblue;
-  padding: 5px 7px;
+  padding: 7px 10px;
+  border: 3px solid aliceblue;
   border-radius: 7px;
+  color: black;
+  font-weight: bold;
 }
 
 #nav-links a:hover {
-  background-color: beige;
+  background-color: aliceblue;
+  border: 3px solid #4682b4;
+}
+
+#login-btn {
+  background-color: #4682b4;
+  padding: 7px 10px;
+  border: 3px solid aliceblue;
+  border-radius: 7px;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 #blog-title {

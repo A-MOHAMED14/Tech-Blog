@@ -3,6 +3,8 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const sequelize = require("./config/connection.js");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
 const routes = require("./controllers/index.js");
 const helpers = require("./utils/helpers.js");
 
@@ -19,6 +21,9 @@ const sess = {
   },
   resave: false,
   saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));

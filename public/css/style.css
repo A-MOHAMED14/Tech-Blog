@@ -186,14 +186,14 @@ header {
   margin: 20px 0px 30px 20px;
 }
 
-#sign-up {
+#signup-link {
   text-decoration: none;
   color: var(--colour7);
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-#sign-up:hover {
+#signup-link:hover {
   color: var(--colour8);
 }
 
@@ -266,15 +266,19 @@ header {
   background-color: var(--colour6);
 }
 
-#login {
-  border: none;
+#login-btn {
   background-color: var(--colour2);
-  margin: 20px 0px 40px 20px;
+  border: none;
+  margin: 20px 0px 30px 20px;
+}
+
+#login-link {
+  text-decoration: none;
   color: var(--colour7);
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-#login:hover {
+#login-link:hover {
   color: var(--colour8);
 }

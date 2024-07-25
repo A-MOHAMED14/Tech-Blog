@@ -15,9 +15,13 @@
     <header>
       <div id="nav-container">
         <nav id="nav-links">
-          <a href="">Home</a>
-          <a href="">Dashboard</a>
-          <button id="login-btn">Login</button>
+          <a href="/">Home</a>
+          <a href="/dashboard">Dashboard</a>
+          {{#if logged_in}}
+            <button id="logout-btn">Logout</button>
+          {{else}}
+            <a href="/login">Login</a>
+          {{/if}}
         </nav>
       </div>
 
@@ -26,9 +30,7 @@
       </div>
     </header>
 
-    <main>
-      {{{body}}}
-    </main>
+    <main>{{{body}}}</main>
 
     <footer></footer>
   </body>

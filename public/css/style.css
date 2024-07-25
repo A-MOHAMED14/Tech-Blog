@@ -3,6 +3,7 @@
   --colour2: #a2a8d3;
   --colour3: #38598b;
   --colour4: #113f67;
+  --colour5: rgb(96, 96, 96);
 }
 
 /* UNIVERSAL STYLING */
@@ -83,7 +84,7 @@ header {
   box-shadow: 7px 7px 1px var(--colour2);
 }
 
-/* -------- MAIN SECTION  -------- */
+/* ---------------- MAIN SECTION  ---------------- */
 
 /* BLOG STYLING */
 #blog-container {
@@ -119,4 +120,69 @@ header {
 #blog-content {
   background-color: var(--colour1);
   padding: 15px 20px;
+}
+
+/* LOGIN FORM STYLING */
+#login-container {
+  background-color: var(--colour2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 50px 50px 10px 50px;
+  border: 3px solid var(--colour4);
+  gap: 15px;
+}
+
+#login-header {
+  background-color: var(--colour4);
+  width: 100%;
+  color: var(--colour1);
+  padding: 10px 15px;
+}
+
+#login-form {
+  width: 100%;
+}
+
+.form-group {
+  padding: 10px 15px;
+}
+
+#email-login {
+  width: 100%;
+  height: 60px;
+  border: 3px solid var(--colour3);
+  border-radius: 7px;
+  font-size: 1.75rem;
+  padding: 0 0 0 10px;
+}
+
+#password-login {
+  width: 100%;
+  height: 60px;
+  border: 3px solid var(--colour3);
+  border-radius: 7px;
+  font-size: 1.75rem;
+  padding: 0 0 0 10px;
+}
+
+#login-form-btn {
+  width: 100%;
+  height: 60px;
+  padding: 10px 0px;
+  border: none;
+  border-radius: 7px;
+  background-color: var(--colour5);
+  font-size: 1.75rem;
+  color: var(--colour1);
+  margin-top: 20px;
+}
+
+#sign-up {
+  border: none;
+  background-color: var(--colour2);
+  margin: 20px 0px 40px 20px;
+  color: rgb(163, 34, 34);
+  font-size: 1.5rem;
+  font-weight: bold;
 }

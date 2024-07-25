@@ -180,10 +180,14 @@ header {
   background-color: var(--colour6);
 }
 
-#sign-up {
-  border: none;
+#signup-btn {
   background-color: var(--colour2);
-  margin: 20px 0px 40px 20px;
+  border: none;
+  margin: 20px 0px 30px 20px;
+}
+
+#sign-up {
+  text-decoration: none;
   color: var(--colour7);
   font-size: 1.5rem;
   font-weight: bold;

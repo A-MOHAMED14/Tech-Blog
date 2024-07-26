@@ -85,37 +85,37 @@ header {
 /* ---------------- MAIN SECTION  ---------------- */
 
 /* BLOG STYLING */
-#blog-container {
+.blog-container {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
-#blog-content-container {
+.blog-content-container {
   width: 80%;
   border: 3px solid var(--colour3);
   border-radius: 5px;
 }
 
-#blog-title {
+.blog-title {
   background-color: var(--colour4);
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
 }
 
-#blog-title p {
+.blog-title p {
   font-size: 1.75rem;
   font-weight: bold;
   color: var(--colour1);
 }
 
-#user p {
+.user p {
   font-size: 1.3rem;
   color: var(--colour2);
 }
 
-#blog-content {
+.blog-content {
   background-color: var(--colour1);
   padding: 15px 20px;
 }
@@ -284,14 +284,21 @@ header {
 }
 
 /* COMMENT FORM STYLING */
+
+#comments-div {
+  display: flex;
+  justify-content: center;
+}
+
 #comment-container {
   background-color: var(--colour2);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: 50px 50px 10px 50px;
   border: 3px solid var(--colour4);
   gap: 15px;
+  width: 80%;
 }
 
 #comment-header {
@@ -305,17 +312,23 @@ header {
   width: 100%;
 }
 
+.comment-form-group {
+  display: flex;
+  justify-content: center;
+  padding: 10px 15px;
+}
+
 #user-comment {
-  width: 100%;
+  width: 85%;
   border: 3px solid var(--colour8);
   border-radius: 7px;
   font-size: 1.75rem;
-  padding: 10 0 10 10px;
+  padding: 15px 20px;
   margin-top: 5px;
 }
 
 #comment-submit-btn {
-  width: 100%;
+  width: 85%;
   height: 60px;
   padding: 10px 0px;
   border: none;

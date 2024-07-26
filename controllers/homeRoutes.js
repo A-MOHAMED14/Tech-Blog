@@ -48,6 +48,19 @@ router.get("/dashboard", withauth, async (req, res) => {
   }
 });
 
+router.get("/comments", async (req, res) => {
+  try {
+    const blogId = req.query.blog_id;
+    const blogData = await Blog.findByPk(blogId, {
+      include: [{ model: User, attributes: ["name"] }],
+    });
+
+    res.render("comments", { blog: blogData.get({ plain: true }) });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/dashboard");

@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Blog } = require("../models");
+const withauth = require("../utils/auth.js");
 
 router.get("/", async (req, res) => {
   try {
@@ -16,6 +17,14 @@ router.get("/", async (req, res) => {
 
     res.render("homepage", { blogs });
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/dashboard", withauth, async (req, res) => {
+  try {
+    res.render("dashboard", { logged_in: true });
+  } catch (error) {
     res.status(500).json(err);
   }
 });

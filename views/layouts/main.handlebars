@@ -26,7 +26,11 @@
       </div>
 
       <div id="title-container">
-        <h1 id="blog-header">TechTide</h1>
+        {{#if current_path}}
+          <h1 id="blog-header">Your Dashboard</h1>
+        {{else}}
+          <h1 id="blog-header">TechTide</h1>
+        {{/if}}
       </div>
 
     </header>

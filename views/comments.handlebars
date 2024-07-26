@@ -1,0 +1,44 @@
+{{#if blog}}
+  <div class="blog-container" data-id="{{blog.id}}">
+    <div class="blog-content-container">
+      <div class="blog-title">
+        <p>{{blog.blog_title}}</p>
+        <div class="user">
+          <p>
+            Posted by
+            {{blog.user.name}}
+            on
+            {{format_date blog.date_created}}
+          </p>
+        </div>
+      </div>
+      <div class="blog-content">
+        <p>{{blog.content}}</p>
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+<div id="comments-div">
+  <div id="comment-container">
+    <div id="comment-header"></div>
+
+    <div id="comment-form-container">
+      <form class="user-comment-form">
+        <div class="comment-form-group">
+          <label for="user-comment"></label>
+          <textarea
+            id="user-comment"
+            placeholder="Enter your comment here..."
+            rows="4"
+            cols="50"
+          ></textarea>
+        </div>
+
+        <div class="comment-form-group">
+          <button id="comment-submit-btn" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

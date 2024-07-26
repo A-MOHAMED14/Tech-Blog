@@ -21,10 +21,29 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/blog/:id", async (req, res) => {
+  try {
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const blog = blogData.get({ plain: true });
+
+    res.status(200).json(blog);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/dashboard", withauth, async (req, res) => {
   try {
     res.render("dashboard", { logged_in: true, current_path: "/dashboard" });
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });

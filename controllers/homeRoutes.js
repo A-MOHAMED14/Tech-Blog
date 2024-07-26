@@ -23,7 +23,7 @@ router.get("/", async (req, res) => {
 
 router.get("/dashboard", withauth, async (req, res) => {
   try {
-    res.render("dashboard", { logged_in: true });
+    res.render("dashboard", { logged_in: true, current_path: "/dashboard" });
   } catch (error) {
     res.status(500).json(err);
   }

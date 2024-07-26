@@ -1,14 +1,14 @@
 {{#each blogs as |blog|}}
 
-  <div id="blog-container">
-    <div id="blog-content-container">
-      <div id="blog-title">
+ <div class="blog-container" data-id="{{blog.id}}">
+    <div class="blog-content-container">
+      <div class="blog-title">
         <p>{{blog.blog_title}}</p>
-        <div id="user">
+        <div class="user">
           <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
         </div>
       </div>
-      <div id="blog-content">
+      <div class="blog-content">
         <p>
           {{blog.content}}
         </p>
@@ -17,3 +17,5 @@
   </div>
 
 {{/each}}
+
+<script src="/js/selectedBlog.js"></script>

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models/index.js");
+const { User, Comment } = require("../../models/index.js");
 
 router.post("/", async (req, res) => {
   try {
@@ -13,6 +13,26 @@ router.post("/", async (req, res) => {
     });
   } catch (error) {
     res.status(400).json(err);
+  }
+});
+
+router.post("/comments", async (req, res) => {
+  try {
+    const { comment, blog_id } = req.body;
+    const userComment = await Comment.create({
+      comment,
+      blog_id,
+      user_id: req.session.user_id,
+    });
+
+    if (!userComment) {
+      res.status(400).json({ message: "Unable to post comment" });
+      return;
+    }
+
+    res.redirect(`/comments?blog_id=${blog_id}`);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

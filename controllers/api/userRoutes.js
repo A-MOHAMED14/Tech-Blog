@@ -30,7 +30,12 @@ router.post("/comments", async (req, res) => {
       return;
     }
 
-    res.redirect(`/comments?blog_id=${blog_id}`);
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.redirect(`/comments?blog_id=${blog_id}`);
+    });
   } catch (err) {
     res.status(500).json(err);
   }

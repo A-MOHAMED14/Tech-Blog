@@ -118,6 +118,7 @@ header {
 .blog-content {
   background-color: var(--colour1);
   padding: 15px 20px;
+  line-height: 1.5;
 }
 
 /* LOGIN FORM STYLING */
@@ -323,6 +324,7 @@ header {
   border: 3px solid var(--colour8);
   border-radius: 7px;
   font-size: 1.75rem;
+  line-height: 2.5rem;
   padding: 15px 20px;
   margin-top: 5px;
 }
@@ -341,4 +343,39 @@ header {
 
 #comment-submit-btn:hover {
   background-color: var(--colour6);
+}
+
+/* POSTED COMMENT SECTION STYLING */
+#comments-section-container {
+  display: flex;
+  justify-content: center;
+}
+
+#comments-section-div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 80%;
+  border: 3px solid var(--colour3);
+  border-radius: 7px;
+}
+
+#top-border {
+  background-color: var(--colour4);
+  height: 50px;
+  width: 100%;
+}
+
+#posted-comments-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 20px;
+  height: 225px;
+  gap: 5px;
+}
+
+#posted-comments-div p {
+  line-height: 1.5;
 }

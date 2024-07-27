@@ -67,7 +67,11 @@ router.get("/comments", withauth, async (req, res) => {
       comment.get({ plain: true })
     );
 
-    res.render("comments", { blog, comments });
+    res.render("comments", {
+      blog,
+      comments,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }

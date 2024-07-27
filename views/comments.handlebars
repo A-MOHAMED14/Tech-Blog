@@ -19,26 +19,43 @@
   </div>
 {{/if}}
 
-<div id="comments-div">
-  <div id="comment-container">
-    <div id="comment-header"></div>
-
-    <div id="comment-form-container">
-      <form class="user-comment-form">
-        <div class="comment-form-group">
-          <label for="user-comment"></label>
-          <textarea
-            id="user-comment"
-            placeholder="Enter your comment here..."
-            rows="4"
-            cols="50"
-          ></textarea>
-        </div>
-
-        <div class="comment-form-group">
-          <button id="comment-submit-btn" type="submit">Submit</button>
-        </div>
-      </form>
+{{#if comments}}
+  <div id="comments-section-container">
+    <div id="comments-section-div">
+      <div id="top-border"></div>
+      <div id="posted-comments-div">
+        {{#each comments as |comment|}}
+          <p>{{comment.comment}}</p>
+          <br />
+          <p>- {{comment.user.name}}, {{format_date comment.date_created}}</p>
+        {{/each}}
+      </div>
     </div>
   </div>
-</div>
+{{else}}
+  <div id="comments-div">
+    <div id="comment-container">
+      <div id="comment-header"></div>
+
+      <div id="comment-form-container">
+        <form class="user-comment-form">
+          <div class="comment-form-group">
+            <label for="user-comment"></label>
+            <textarea
+              id="user-comment"
+              placeholder="Enter your comment here..."
+              rows="4"
+              cols="50"
+            ></textarea>
+          </div>
+
+          <div class="comment-form-group">
+            <button id="comment-submit-btn" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+<script src="/js/blogComment.js"></script>

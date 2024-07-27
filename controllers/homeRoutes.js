@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Blog } = require("../models");
+const { User, Blog, Comment } = require("../models");
 const withauth = require("../utils/auth.js");
 
 router.get("/", async (req, res) => {
@@ -48,14 +48,26 @@ router.get("/dashboard", withauth, async (req, res) => {
   }
 });
 
-router.get("/comments", async (req, res) => {
+router.get("/comments", withauth, async (req, res) => {
   try {
     const blogId = req.query.blog_id;
+
     const blogData = await Blog.findByPk(blogId, {
       include: [{ model: User, attributes: ["name"] }],
     });
 
-    res.render("comments", { blog: blogData.get({ plain: true }) });
+    const blog = blogData.get({ plain: true });
+
+    const commentsData = await Comment.findAll({
+      where: { blog_id: blogId },
+      include: [{ model: User, attributes: ["name"] }],
+    });
+
+    const comments = commentsData.map((comment) =>
+      comment.get({ plain: true })
+    );
+
+    res.render("comments", { blog, comments });
   } catch (err) {
     res.status(500).json(err);
   }

@@ -1,0 +1,50 @@
+<div id="new-post-container">
+
+  {{#if new_post}}
+
+    <div id="new-post-header"><h3>Create New Post</h3></div>
+
+    <div id="new-user-post">
+      <form class="new-post-form">
+        <div class="form-group">
+          <label for="new-blog-title">Title</label>
+          <br />
+          <input type="text" id="new-blog-title" />
+        </div>
+
+        <div class="form-group">
+          <label for="new-blog-content">Content</label>
+          <br />
+          <textarea id="new-blog-content" rows="5" cols="50"></textarea>
+        </div>
+
+        <div class="form-group">
+          <button id="submit-post-btn" type="submit">Create</button>
+        </div>
+      </form>
+    </div>
+
+    <button id="new-post-btn">+ New Post</button>
+
+  {{else if blogs}}
+
+    {{#each blogs as |blog|}}
+      <div id="posted-blogs-div" data-id="{{blog.id}}">
+        <div id="posted-blogs-container">
+          <button id="posted-blog">
+            <div id="title-blog"> {{blog.blog_title}} </div>
+            <div id="date-blog"> {{format_date blog.date_created}} </div>
+          </button>
+        </div>
+      </div>
+    {{/each}}
+
+  {{else}}
+
+    <button id="new-post-btn">+ New Post</button>
+
+  {{/if}}
+
+</div>
+
+<script src="/js/newBlog.js"></script>

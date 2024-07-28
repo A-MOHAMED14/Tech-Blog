@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Comment } = require("../../models/index.js");
+const { User, Blog, Comment } = require("../../models/index.js");
 
 router.post("/", async (req, res) => {
   try {
@@ -35,6 +35,32 @@ router.post("/comments", async (req, res) => {
       req.session.logged_in = true;
 
       res.redirect(`/comments?blog_id=${blog_id}`);
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post("/newblog", async (req, res) => {
+  try {
+    const { blog_title, content } = req.body;
+
+    const blogData = await Blog.create({
+      blog_title,
+      content,
+      user_id: req.session.user_id,
+    });
+
+    if (!blogData) {
+      res.status(400).json({ message: "Unable to create new record" });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = blogData.user_id;
+      req.session.logged_in = true;
+
+      res.redirect("/dashboard/yourblogs");
     });
   } catch (err) {
     res.status(500).json(err);

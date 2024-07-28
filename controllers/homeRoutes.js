@@ -48,6 +48,14 @@ router.get("/dashboard", withauth, async (req, res) => {
   }
 });
 
+router.get("/dashboard/newblog", withauth, async (req, res) => {
+  try {
+    res.render("dashboard", { logged_in: true, new_post: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/comments", withauth, async (req, res) => {
   try {
     const blogId = req.query.blog_id;

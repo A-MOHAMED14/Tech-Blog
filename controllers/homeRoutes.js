@@ -56,6 +56,22 @@ router.get("/dashboard/newblog", withauth, async (req, res) => {
   }
 });
 
+router.get("/dashboard/yourblogs", withauth, async (req, res) => {
+  try {
+    const blogData = await Blog.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
+    res.render("dashboard", { logged_in: req.session.logged_in, blogs });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/comments", withauth, async (req, res) => {
   try {
     const blogId = req.query.blog_id;

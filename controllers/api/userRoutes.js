@@ -81,6 +81,17 @@ router.put("/update/:id", async (req, res) => {
   }
 });
 
+router.delete("/delete/:id", async (req, res) => {
+  const blogData = await Blog.destroy({ where: { id: req.params.id } });
+
+  if (!blogData) {
+    res.status(404).json({ message: "No blog found with this id!" });
+    return;
+  }
+
+  res.status(200).json({ message: "Blog deleted successfully" });
+});
+
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });

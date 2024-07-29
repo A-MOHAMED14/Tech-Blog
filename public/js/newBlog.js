@@ -9,7 +9,6 @@ const handleNewPostClick = async () => {
 };
 
 const newPostBtn = document.querySelector("#new-post-btn");
-
 newPostBtn.addEventListener("click", handleNewPostClick);
 
 const handleNewBlogPost = async (event) => {
@@ -30,10 +29,11 @@ const handleNewBlogPost = async (event) => {
 
     if (response.ok) {
       document.location.assign("/dashboard/yourblogs");
+    } else {
+      alert(response.statusText);
     }
   }
 };
 
 const createPostBtn = document.querySelector(".new-post-form");
-
 createPostBtn.addEventListener("submit", handleNewBlogPost);

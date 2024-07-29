@@ -50,7 +50,11 @@ router.get("/dashboard", withauth, async (req, res) => {
 
 router.get("/dashboard/newblog", withauth, async (req, res) => {
   try {
-    res.render("dashboard", { logged_in: true, new_post: true });
+    res.render("dashboard", {
+      logged_in: true,
+      new_post: true,
+      current_path: "/dashboard",
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -66,7 +70,32 @@ router.get("/dashboard/yourblogs", withauth, async (req, res) => {
 
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    res.render("dashboard", { logged_in: req.session.logged_in, blogs });
+    res.render("dashboard", {
+      blogs,
+      logged_in: req.session.logged_in,
+      current_path: "/dashboard",
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/dashboard/edit", withauth, async (req, res) => {
+  try {
+    const blogId = req.query.blog_id;
+
+    const blogData = await Blog.findByPk(blogId, {
+      include: [{ model: User, attributes: ["name"] }],
+    });
+
+    const blog = blogData.get({ plain: true });
+
+    res.render("dashboard", {
+      blog,
+      logged_in: req.session.logged_in,
+      edit_post: true,
+      current_path: "/dashboard",
+    });
   } catch (err) {
     res.status(500).json(err);
   }

@@ -41,6 +41,40 @@
       {{/each}}
     </div>
 
+  {{else if edit_post}}
+    <div id="edit-post-container">
+      <div id="edit-post-header"><h3>Edit Post</h3></div>
+      <div id="edit-user-post">
+        <form class="edit-post-form">
+          <div class="form-group">
+            <label for="edit-blog-title">Title</label>
+            <input
+              type="text"
+              id="edit-blog-title"
+              value="{{blog.blog_title}}"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="edit-blog-content">Content</label>
+            <textarea
+              id="edit-blog-content"
+              rows="5"
+              cols="50"
+            >{{blog.content}}</textarea>
+          </div>
+
+          <div class="form-group">
+            <button id="update-blog-btn" type="submit">Update Post</button>
+          </div>
+        </form>
+        <div class="form-group">
+          <button id="delete-blog-btn">Delete</button>
+        </div>
+
+      </div>
+    </div>
+
   {{else}}
 
     <button id="new-post-btn">+ New Post</button>
@@ -50,3 +84,5 @@
 </div>
 
 <script src="/js/newBlog.js"></script>
+<script src="/js/editForm.js"></script>
+<script src="/js/updateBlog.js"></script>

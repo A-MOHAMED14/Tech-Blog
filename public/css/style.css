@@ -88,7 +88,8 @@ header {
 .blog-container {
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .blog-content-container {
@@ -454,13 +455,21 @@ header {
 }
 
 /* POSTED BLOGS SECTION STYLING */
-#posted-blogs-div {
+#posted-blogs-container {
+  width: 90%;
   display: flex;
-  justify-content: center;
-  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
 }
 
-#posted-blogs-container {
+.posted-blogs-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  width: 90%;
+}
+
+.posted-blogs-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -468,7 +477,7 @@ header {
   gap: 30px;
 }
 
-#posted-blog {
+.posted-blog {
   width: 100%;
   padding: 15px 30px;
   font-size: 1.75rem;
@@ -480,7 +489,7 @@ header {
   justify-content: space-between;
 }
 
-#posted-blog:hover {
+.posted-blog:hover {
   background-color: var(--colour3);
   color: var(--colour1);
 }

@@ -28,16 +28,18 @@
 
   {{else if blogs}}
 
-    {{#each blogs as |blog|}}
-      <div id="posted-blogs-div" data-id="{{blog.id}}">
-        <div id="posted-blogs-container">
-          <button id="posted-blog">
-            <div id="title-blog"> {{blog.blog_title}} </div>
-            <div id="date-blog"> {{format_date blog.date_created}} </div>
-          </button>
+    <div id="posted-blogs-container">
+      {{#each blogs as |blog|}}
+        <div class="posted-blogs-div" data-id="{{blog.id}}">
+          <div class="posted-blogs-container">
+            <div class="posted-blog">
+              <p class="title-blog"> {{blog.blog_title}}</p>
+              <p class="date-blog"> {{format_date blog.date_created}} </p>
+            </div>
+          </div>
         </div>
-      </div>
-    {{/each}}
+      {{/each}}
+    </div>
 
   {{else}}
 

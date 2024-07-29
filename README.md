@@ -1,5 +1,7 @@
 # Tech Blog CMS: A Full-Stack Blogging Platform
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 ## Description
 
 This is a CMS-style blog application built with Express.js, PostgreSQL, and Sequelize. The backend provides RESTful API endpoints to manage blog posts and comments, and uses Handlebars.js for templating. It supports user authentication, allowing developers to create, update, delete, and comment on blog posts. The application follows the MVC (Model-View-Controller) architecture, separating concerns into distinct layers for data management, business logic, and presentation, ensuring a scalable and maintainable codebase.
@@ -76,3 +78,7 @@ git push origin feature/your-feature-name
 ```
 
 5. Open a pull request to the main repository, describing your changes in detail.
+
+## License 📄
+
+This project is licensed under the MIT License. You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, provided that the original copyright notice and permission notice are included in all copies or substantial portions of the software. For more details, see the MIT [LICENSE](https://opensource.org/licenses/MIT) file.

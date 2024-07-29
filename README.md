@@ -51,3 +51,28 @@ npm run start
 ```
 
 This will sync the Sequelize models to your PostgreSQL database, and will then start the server. The server will be running on http://localhost:3001
+
+## Contributing 🤝
+
+Contributions are welcome! If you'd like to contribute to this project, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix:
+
+```sh
+git checkout -b feature/your-feature-name
+```
+
+3. Make your changes and commit them with descriptive messages:
+
+```sh
+git commit -m "Add new feature: your feature description"
+```
+
+4. Push your changes to your forked repository:
+
+```sh
+git push origin feature/your-feature-name
+```
+
+5. Open a pull request to the main repository, describing your changes in detail.

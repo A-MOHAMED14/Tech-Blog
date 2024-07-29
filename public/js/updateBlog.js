@@ -24,3 +24,21 @@ const handleBlogPostUpdate = async (event) => {
 document
   .querySelector(".edit-post-form")
   .addEventListener("submit", handleBlogPostUpdate);
+
+const handleBlogPostDelete = async (event) => {
+  const blogId = new URLSearchParams(window.location.search).get("blog_id");
+
+  if (blogId) {
+    const response = await fetch(`/api/users/delete/${blogId}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      document.location.assign("/dashboard/yourblogs");
+    }
+  }
+};
+
+document
+  .querySelector("#delete-blog-btn")
+  .addEventListener("click", handleBlogPostDelete);

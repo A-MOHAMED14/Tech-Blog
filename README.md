@@ -41,3 +41,13 @@ psql -U <your_postgresql_username> -d <your_database_name> -f db/schema.sql
 
 npm run seed
 ```
+
+## Usage 🏗️
+
+To start the application, run the following command:
+
+```sh
+npm run start
+```
+
+This will sync the Sequelize models to your PostgreSQL database, and will then start the server. The server will be running on http://localhost:3001

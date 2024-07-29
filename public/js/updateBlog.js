@@ -25,17 +25,19 @@ document
   .querySelector(".edit-post-form")
   .addEventListener("submit", handleBlogPostUpdate);
 
-const handleBlogPostDelete = async (event) => {
-  const blogId = new URLSearchParams(window.location.search).get("blog_id");
-
-  if (blogId) {
-    const response = await fetch(`/api/users/delete/${blogId}`, {
-      method: "DELETE",
-    });
-
-    if (response.ok) {
-      document.location.assign("/dashboard/yourblogs");
+const handleBlogPostDelete = async () => {
+  if (confirm("Are you sure you want to delete this blog post?")) {
+    const blogId = new URLSearchParams(window.location.search).get("blog_id");
+    if (blogId) {
+      const response = await fetch(`/api/users/delete/${blogId}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        document.location.assign("/dashboard/yourblogs");
+      }
     }
+  } else {
+    return;
   }
 };
 

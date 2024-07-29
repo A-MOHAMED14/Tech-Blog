@@ -31,7 +31,7 @@ router.post("/comments", async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = userComment.user_id;
       req.session.logged_in = true;
 
       res.redirect(`/comments?blog_id=${blog_id}`);
@@ -56,12 +56,26 @@ router.post("/newblog", async (req, res) => {
       return;
     }
 
-    req.session.save(() => {
-      req.session.user_id = blogData.user_id;
-      req.session.logged_in = true;
+    res.redirect("/dashboard/yourblogs");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-      res.redirect("/dashboard/yourblogs");
+router.put("/update/:id", async (req, res) => {
+  try {
+    const blogData = await Blog.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
     });
+
+    if (!blogData[0]) {
+      res.status(404).json({ message: "No blog found with this id!" });
+      return;
+    }
+
+    res.status(200).json({ message: "Blog updated successfully" });
   } catch (err) {
     res.status(500).json(err);
   }

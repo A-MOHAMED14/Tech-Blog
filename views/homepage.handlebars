@@ -1,11 +1,14 @@
 {{#each blogs as |blog|}}
 
- <div class="blog-container" data-id="{{blog.id}}">
+  <div class="blog-container" data-id="{{blog.id}}">
     <div class="blog-content-container">
       <div class="blog-title">
         <p>{{blog.blog_title}}</p>
         <div class="user">
-          <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+          <p>Posted by
+            {{blog.user.name}}
+            on
+            {{format_date blog.date_created}}</p>
         </div>
       </div>
       <div class="blog-content">

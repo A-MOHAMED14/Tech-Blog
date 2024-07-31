@@ -71,7 +71,7 @@ header {
   justify-content: center;
 }
 
-#blog-header {
+.blog-header {
   margin-top: 50px;
   margin-bottom: 20px;
   font-size: 4rem;

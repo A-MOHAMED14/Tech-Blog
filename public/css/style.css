@@ -470,9 +470,6 @@ header {
 }
 
 .posted-blogs-container {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
   width: 90%;
   gap: 30px;
 }
@@ -556,8 +553,20 @@ header {
 }
 
 /* MEDIA QUERIES - RESPONSIVE DESIGN */
+
+@media (max-width: 1000px) {
+  /* BLOGS ON HOMEPAGE*/
+  .blog-title {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 @media (max-width: 700px) {
-  /* HEADER SECTION */
+  /* BLOGS ON HOMEPAGE*/
+  .blog-title {
+    flex-direction: column;
+  }
+
   .blog-title p {
     font-size: 1.5rem;
   }
@@ -611,6 +620,10 @@ header {
   /* BLOGS ON HOMEPAGE */
   .blog-header {
     font-size: 3rem;
+  }
+
+  .blog-title {
+    flex-direction: column;
   }
 
   .blog-title p {

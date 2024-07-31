@@ -73,7 +73,7 @@ router.get("/dashboard/yourblogs", withauth, async (req, res) => {
     res.render("dashboard", {
       blogs,
       logged_in: req.session.logged_in,
-      current_path: "/dashboard",
+      your_blogs: true,
     });
   } catch (err) {
     res.status(500).json(err);

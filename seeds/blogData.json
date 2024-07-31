@@ -2,5 +2,10 @@
   {
     "blog_title": "Cookies Demystified: What They Really Do",
     "content": "A common misconception is that cookies are inherently malicious; however, they are simply text files used for session management and personalisation."
+  },
+
+  {
+    "blog_title": "APIs Unveiled: The Power Behind Modern Applications",
+    "content": "APIs enable seamless integration and data exchange between services, powering everything from social media logins to real-time updates in your favorite apps."
   }
 ]

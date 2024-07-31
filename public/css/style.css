@@ -103,6 +103,7 @@ header {
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
+  gap: 15px;
 }
 
 .blog-title p {
@@ -553,4 +554,33 @@ header {
 #update-blog-btn:hover,
 #delete-blog-btn:hover {
   background-color: var(--colour6);
+}
+
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+@media (max-width: 700px) {
+  .blog-title p {
+    font-size: 1.5rem;
+  }
+
+  .user p {
+    font-size: 1.1rem;
+  }
+
+  .blog-content {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .blog-title p {
+    font-size: 1.2rem;
+  }
+
+  .user p {
+    font-size: 1rem;
+  }
+
+  .blog-content {
+    font-size: 1.1rem;
+  }
 }

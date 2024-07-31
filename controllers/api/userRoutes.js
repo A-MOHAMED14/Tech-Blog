@@ -52,7 +52,7 @@ router.post("/newblog", async (req, res) => {
     });
 
     if (!blogData) {
-      res.status(400).json({ message: "Unable to create new record" });
+      res.status(400).json({ message: "Unable to create new blog record" });
       return;
     }
 
@@ -121,6 +121,23 @@ router.post("/login", async (req, res) => {
   } catch (error) {
     res.status(400).json(err);
   }
+});
+
+router.post("/signup", async (req, res) => {
+  const { name, email, password } = req.body;
+  const userData = await User.create({ name, email, password });
+
+  if (!userData) {
+    res.status(400).json({ message: "Unable to create new user record" });
+    return;
+  }
+
+  req.session.save(() => {
+    req.session.user_id = userData.id;
+    req.session.logged_in = true;
+
+    res.status(200).json({ message: "New user record created successfully" });
+  });
 });
 
 router.post("/logout", (req, res) => {

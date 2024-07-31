@@ -572,6 +572,18 @@ header {
 }
 
 @media (max-width: 400px) {
+  #nav-links a {
+    font-size: 1.3rem;
+  }
+
+  #logout-btn {
+    font-size: 1.3rem;
+  }
+
+  .blog-header {
+    font-size: 3rem;
+  }
+
   .blog-title p {
     font-size: 1.2rem;
   }

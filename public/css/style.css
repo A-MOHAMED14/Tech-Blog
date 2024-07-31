@@ -557,6 +557,7 @@ header {
 
 /* MEDIA QUERIES - RESPONSIVE DESIGN */
 @media (max-width: 700px) {
+  /* HEADER SECTION */
   .blog-title p {
     font-size: 1.5rem;
   }
@@ -569,6 +570,7 @@ header {
     font-size: 1.25rem;
   }
 
+  /* COMMENTS SECTION */
   #user-comment {
     font-size: 1.25rem;
   }
@@ -576,9 +578,15 @@ header {
   #posted-comments-div p {
     font-size: 1.25rem;
   }
+
+  /* DASHBOARD */
+  #dashboard {
+    font-size: 2.75rem;
+  }
 }
 
 @media (max-width: 400px) {
+  /* HEADER SECTION */
   #nav-links a {
     font-size: 1.3rem;
   }
@@ -587,6 +595,7 @@ header {
     font-size: 1.3rem;
   }
 
+  /* BLOGS ON HOMEPAGE */
   .blog-header {
     font-size: 3rem;
   }
@@ -603,6 +612,7 @@ header {
     font-size: 1.1rem;
   }
 
+  /* COMMENTS SECTION */
   #user-comment {
     font-size: 1.1rem;
     line-height: 2rem;
@@ -610,5 +620,14 @@ header {
 
   #posted-comments-div p {
     font-size: 1.1rem;
+  }
+
+  /* DASHBOARD */
+  #dashboard {
+    font-size: 2rem;
+  }
+
+  #new-post-btn {
+    font-size: 1.3rem;
   }
 }

@@ -470,9 +470,9 @@ header {
 }
 
 .posted-blogs-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
   width: 90%;
   gap: 30px;
 }
@@ -583,6 +583,19 @@ header {
   #dashboard {
     font-size: 2.75rem;
   }
+
+  /* YOUR BLOGS SECTION */
+
+  #your-blogs {
+    font-size: 3rem;
+  }
+
+  .posted-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 400px) {
@@ -629,5 +642,17 @@ header {
 
   #new-post-btn {
     font-size: 1.3rem;
+  }
+
+  /* YOUR BLOGS SECTION */
+  #your-blogs {
+    font-size: 2.25rem;
+  }
+
+  .posted-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 1.1rem;
   }
 }
